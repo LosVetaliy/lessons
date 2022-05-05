@@ -11,7 +11,21 @@
 <body>
     <h1>my blog</h1>
     <div id="app"></div>
-    <button class="add-post" onclick="handleAddPostPress()">add post</button>
+
+    <div class="formWrapper">
+        <input type="text" class="formInput" id='formTitle' placeholder="Заголовок поста">
+        <textarea class="formInput" id="formText" placeholder="Текст поста"></textarea>
+        <input type="text" class="formInput" id='formImg' placeholder="Ссылка на изображение">
+        <input type="text" class="formInput" id="formSpotify" placeholder="Ссылка Spotify">
+        <input type="text" class="formInput" id="formApple" placeholder="Ссылка Apple">
+        <label>
+            <input id='formCheckbox' type="checkbox">
+            <span>Подстветить</span>
+        </label>
+        <button class="add-post" onclick='addPost()'>add post</button>
+    </div>
+
+
     <script src="index.js" type="module"></script>
     
 </body>

@@ -45,3 +45,8 @@ a {
     margin: 5px;
 
 }
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+}

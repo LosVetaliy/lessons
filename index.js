@@ -1,7 +1,9 @@
 import initialData from './initialData.js';
+import { Post } from './post.js';
 
 const container = document.getElementById('app');
 
+let data = initialData;
 
 const renderPost = function(post) {
     let title = document.createElement('h3'); //создаем объект, ниже вытаскивая инфу из массива post
@@ -45,7 +47,41 @@ const renderPost = function(post) {
     container.appendChild(postWrapper);
 }
 
-for (const post of initialData) {
-    renderPost(post);
+const addPost = () => {
+    const formTitle = document.getElementById('formTitle').value;
+    const formText = document.getElementById('formText').value;
+    const formImg = document.getElementById('formImg').value;
+    const formSpotify = document.getElementById('formSpotify').value;
+    const formApple = document.getElementById('formApple').value;
+    const formCheckbox = document.getElementById('formCheckbox').checked;
+
+    const post = {
+        title: formTitle,
+        description: formText,
+        cover: formImg,
+        links: {
+            spotify: formSpotify,
+            apple: formApple
+        },
+        highlighted: formCheckbox,
+    };
+
+    data.push(post);
+    renderAll();
 }
+
+window.addPost = addPost; 
+
+const renderAll = () => {
+    container.innerHTML = "";
+    for (const post of initialData) {
+        renderPost(post);
+    }
+}
+
+renderAll();
+
+const newPost = new Post ("title", 'description', 'cover', {spotify:'', apple:''});
+
+newPost.render(container);
 
