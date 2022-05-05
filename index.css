@@ -7,13 +7,16 @@ img {
     height: 150px;
 }
 
-.postWrapper {
-    display: flex;
+.postWrapper { 
+    display: flex; 
     flex-direction: row;
+    position: relative;
     padding: 20px;
 }
 
 .textWrapper {
+    display: flex; 
+    flex-direction: column;
     margin-left: 20px;
 }
 
@@ -27,6 +30,18 @@ h3 {
     margin-bottom: 15px;
 }
 
+.cross {
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .postOverlay {
     background-color: rgba(71, 120, 120, 0.4);
+}
+
+a {
+    margin: 5px;
+
 }
